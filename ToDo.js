@@ -4,7 +4,13 @@ const button = document.getElementById("onetwo");
 const ul = document.getElementsByClassName("new_item");
 
 console.log(tasks)
-button.addEventListener("click", blank) 
+button.addEventListener("click", blank)
+
+document.getElementById("itemInput").addEventListener("keypress", function(e) {
+  if(e.key === "Enter"){
+    blank();
+  }
+});
 // item.addEventListener("click", abc)
 
 // function abc(){
@@ -22,7 +28,7 @@ function blank(){
         // }
         console.log(text)
         tasks.push(text)
-        
+
     }
     // addText(tasks)
     document.getElementsByClassName("new_item")[0].appendChild(addText(tasks))
@@ -39,16 +45,16 @@ function addText(tasks){
     // if(checkbox=checked){
     //     text = line
     // }
-    
+
     listViewItem.appendChild(document.createTextNode(tasks[tasks.length-1]));
     listView.appendChild(listViewItem);
     document.getElementById("itemInput").value = ""
     return listView;
-    
+
 }
 
 function yesno(listViewItem){
-    
+
     if(listViewItem.checkbox = 'checked'){
         document.getElementById("itemInput").value.strike();
     }
@@ -60,4 +66,3 @@ function yesno(listViewItem){
 //     tasks = Math.floor(Math.random() * 100);
 //     console.log(tasks)
 // }
-
